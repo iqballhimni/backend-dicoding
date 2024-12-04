@@ -1,4 +1,5 @@
-FROM node:18
+FROM node:20
+
 WORKDIR /app
 
 COPY package*.json ./
@@ -8,10 +9,9 @@ RUN npm install
 COPY . .
 
 ENV APP_ENV=production
-ENV APP_PORT=8080
 ENV MODEL_URL="https://storage.googleapis.com/storage-models-mlgc/load-models/model.json"
-ENV APP_PORT=""
-
-CMD [ "npm", "start" ]
+ENV PROJECT_ID="sertamulia-443609"
+ENV PORT=8080
 
 EXPOSE 8080
+CMD [ "npm", "run", "start"]
