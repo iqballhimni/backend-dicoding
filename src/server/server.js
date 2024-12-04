@@ -33,7 +33,7 @@ dotenv.config();
     if (response.isBoom && response.output.statusCode === 413) {
       const newResponse = h.response({
         status: "fail",
-        message: "Payload content length greater than maximum allowed: 1000000",
+        message: "The size of the payload content exceeds the maximum limit of 1000000",
       });
       newResponse.code(413);
       return newResponse;
