@@ -1,6 +1,8 @@
 FROM node:20
 WORKDIR /app
 RUN npm install
+COPY package*.json ./
+
 COPY . .
 
 ENV APP_ENV=production
